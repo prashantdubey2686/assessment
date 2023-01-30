@@ -1,0 +1,24 @@
+<div class="center">
+    <div *ngIf="isLoading" class="spinner-border text-primary spinner" role="status">
+        <span class="visually-hidden">Loading...</span>
+    </div>
+    <div class="card" *ngIf="!isLoading" >
+        <div class="card-body">
+            <h5 class="card-title">Movie List</h5>
+            <div class="card" *ngFor="let movie of movies?.results">
+                <div class="card-header">
+                    <h5 class="card-title">{{movie.title}} Movies</h5>
+                    <h6 class="card-subtitle mb-2 text-muted">{{movie.genres}}</h6>
+                </div>
+                <div card="card-body">
+                    <p class="card-text">{{movie.description}} Movies</p>
+                </div>
+
+            </div>
+            <button *ngIf="!!movies?.previous" class="btn btn-primary" style="margin-right: 20px;"
+                (click)="loadMovie(movies?.previous)">Previous</button>
+            <button *ngIf="!!movies?.next" class="btn btn-primary" (click)="loadMovie(movies?.next)">Next</button>
+        </div>
+    </div>
+
+</div>

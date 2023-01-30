@@ -1,0 +1,23 @@
+<div class="center">
+    <h1>Login</h1>
+    <form [formGroup]="formgroup" (ngSubmit)="loginproces()">
+        <div class="wrapper">
+            <div class="input-data">
+                <input type="text" formControlName="username" required />
+                <div class="underline"></div>
+                <label>User name</label>
+            </div>
+        </div>
+        <div class="wrapper">
+            <div class="input-data">
+                <input type="password" formControlName="password" required />
+                <div class="underline"></div>
+                <label>Password</label>
+            </div>
+        </div>
+
+        <div>
+            <input type="submit" value="Login" />
+        </div>
+    </form>
+</div>
